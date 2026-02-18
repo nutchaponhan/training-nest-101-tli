@@ -22,8 +22,6 @@ export class AppController {
       const data = await repos.productConfig.findAll();
       return data;
     } catch (error) {
-      console.log(error?.detail);
-      console.log(error?.message);
       return {
         error: error?.message,
       };
