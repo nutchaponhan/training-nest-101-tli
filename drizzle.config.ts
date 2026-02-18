@@ -1,12 +1,18 @@
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
-  schema: './src/database/schema.ts',
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.DATABASE_URL!,
+    host: 'localhost',
+    port: 5555,
+    user: 'postgres',
+    password: 'postgres',
+    database: 'training-nest-101',
+    ssl: false,
   },
+  verbose: true,
+  strict: true,
   tablesFilter: [
     // base-plan
     'product_config',

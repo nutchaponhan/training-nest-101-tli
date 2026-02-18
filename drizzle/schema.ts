@@ -12,7 +12,6 @@ import {
   primaryKey,
   pgSequence,
 } from 'drizzle-orm/pg-core';
-import { sql } from 'drizzle-orm';
 
 export const applicationCounterOfferIdSeq = pgSequence(
   'application_counter_offer_id_seq',
