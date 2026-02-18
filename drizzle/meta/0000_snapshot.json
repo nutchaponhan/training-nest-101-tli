@@ -1,0 +1,773 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.product_config": {
+      "name": "product_config",
+      "schema": "",
+      "columns": {
+        "plan_code": {
+          "name": "plan_code",
+          "type": "varchar(10)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "plan_type": {
+          "name": "plan_type",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "display_name": {
+          "name": "display_name",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "condition_description": {
+          "name": "condition_description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "benefit_description": {
+          "name": "benefit_description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "gender": {
+          "name": "gender",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment_type": {
+          "name": "payment_type",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment_period": {
+          "name": "payment_period",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "coverage_type": {
+          "name": "coverage_type",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "coverage_period": {
+          "name": "coverage_period",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "accident_flag": {
+          "name": "accident_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "disable_flag": {
+          "name": "disable_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "discount_flag": {
+          "name": "discount_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mature_amount": {
+          "name": "mature_amount",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "min_age": {
+          "name": "min_age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "max_age": {
+          "name": "max_age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pension_age": {
+          "name": "pension_age",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "min_sum_assure": {
+          "name": "min_sum_assure",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "max_sum_assure": {
+          "name": "max_sum_assure",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "step_sum_assure_code": {
+          "name": "step_sum_assure_code",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "life_premium": {
+          "name": "life_premium",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "accident_premium": {
+          "name": "accident_premium",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dividend_flag": {
+          "name": "dividend_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "surrender_flag": {
+          "name": "surrender_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apl_flag": {
+          "name": "apl_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "min_premium": {
+          "name": "min_premium",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "max_premium": {
+          "name": "max_premium",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "interest_rate": {
+          "name": "interest_rate",
+          "type": "numeric(5, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mature_interest_rate": {
+          "name": "mature_interest_rate",
+          "type": "numeric(5, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "loan_interest_rate": {
+          "name": "loan_interest_rate",
+          "type": "numeric(5, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "devoid": {
+          "name": "devoid",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "policy_type": {
+          "name": "policy_type",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "coverage_amount": {
+          "name": "coverage_amount",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'0'"
+        },
+        "issue_start_date": {
+          "name": "issue_start_date",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "issue_end_date": {
+          "name": "issue_end_date",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calculate_config_type": {
+          "name": "calculate_config_type",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "payment_mode_code": {
+          "name": "payment_mode_code",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tax_deduction_type": {
+          "name": "tax_deduction_type",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "max_tax_deduction": {
+          "name": "max_tax_deduction",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "package_flag": {
+          "name": "package_flag",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "embedded_riders": {
+          "name": "embedded_riders",
+          "type": "varchar(10)[]",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "uw_method": {
+          "name": "uw_method",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "approve_by": {
+          "name": "approve_by",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "create_time": {
+          "name": "create_time",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "create_user_code": {
+          "name": "create_user_code",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "last_update": {
+          "name": "last_update",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "update_user_code": {
+          "name": "update_user_code",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "min_age_unit": {
+          "name": "min_age_unit",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "max_age_unit": {
+          "name": "max_age_unit",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_new_core": {
+          "name": "is_new_core",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        },
+        "life_planning": {
+          "name": "life_planning",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false,
+          "default": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {},
+      "policies": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {
+    "public.application_counter_offer_id_seq": {
+      "name": "application_counter_offer_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_guardian_id_seq": {
+      "name": "application_guardian_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_id_seq": {
+      "name": "application_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_ocr_transaction_id_seq": {
+      "name": "application_ocr_transaction_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_offer_document_id_seq": {
+      "name": "application_offer_document_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_offer_information_id_seq": {
+      "name": "application_offer_information_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_offer_payment_id_seq": {
+      "name": "application_offer_payment_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_offer_quotation_id_seq": {
+      "name": "application_offer_quotation_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_offer_tracking_id_seq": {
+      "name": "application_offer_tracking_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_refund_id_seq": {
+      "name": "application_refund_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.application_refund_transaction_id_seq": {
+      "name": "application_refund_transaction_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.document_type_id_seq": {
+      "name": "document_type_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.health_age_range_id_seq": {
+      "name": "health_age_range_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.health_condition_id_seq": {
+      "name": "health_condition_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.health_config_id_seq": {
+      "name": "health_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.health_sum_assured_range_id_seq": {
+      "name": "health_sum_assured_range_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.life_planning_id_seq": {
+      "name": "life_planning_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.life_planning_prospect_id_seq": {
+      "name": "life_planning_prospect_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_illustration_config_id_seq": {
+      "name": "product_illustration_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_illustration_layout_id_seq": {
+      "name": "product_illustration_layout_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_illustration_rider_id_seq": {
+      "name": "product_illustration_rider_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_illustration_sign_id_seq": {
+      "name": "product_illustration_sign_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_illustration_type_config_id_seq": {
+      "name": "product_illustration_type_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_ol_coupon_id_seq": {
+      "name": "product_ol_coupon_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_ol_coupontable_id_seq": {
+      "name": "product_ol_coupontable_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_ol_extended_id_seq": {
+      "name": "product_ol_extended_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_ol_maturetable_id_seq": {
+      "name": "product_ol_maturetable_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_ol_parcoupon_rate_id_seq": {
+      "name": "product_ol_parcoupon_rate_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_pa_premium_rate_id_seq": {
+      "name": "product_pa_premium_rate_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_pa_tax_rate_id_seq": {
+      "name": "product_pa_tax_rate_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_package_id_seq": {
+      "name": "product_package_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.product_tax_condition_id_seq": {
+      "name": "product_tax_condition_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.quotation_guardian_id_seq": {
+      "name": "quotation_guardian_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.quotation_ref_no_seq": {
+      "name": "quotation_ref_no_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "9223372036854775807",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.release_build_id_seq": {
+      "name": "release_build_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.release_build_metadata_product_id_seq": {
+      "name": "release_build_metadata_product_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.release_build_metadata_script_id_seq": {
+      "name": "release_build_metadata_script_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.release_config_id_seq": {
+      "name": "release_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.rider_plan_rate_config_id_seq": {
+      "name": "rider_plan_rate_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    },
+    "public.rider_tax_rate_config_id_seq": {
+      "name": "rider_tax_rate_config_id_seq",
+      "schema": "public",
+      "startWith": "1",
+      "minValue": "1",
+      "maxValue": "2147483647",
+      "increment": "1",
+      "cycle": false,
+      "cache": "1"
+    }
+  },
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {
+      "product_config": {
+        "columns": {
+          "embedded_riders": {
+            "isArray": true,
+            "dimensions": 1,
+            "rawType": "character varying(10)"
+          }
+        }
+      }
+    }
+  }
+}

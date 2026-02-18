@@ -29,9 +29,10 @@ docker compose up -d
 ```
 
 This starts PostgreSQL on **port 5555** with:
+
 - **User:** `postgres`
 - **Password:** `postgres`
-- **Database:** `training_nest_101`
+- **Database:** `training-nest-101`
 
 To verify the container is running:
 
@@ -39,7 +40,29 @@ To verify the container is running:
 docker compose ps
 ```
 
-## 4. Generate & Run Database Migrations
+## 4. Import SQL Dump into Database
+
+After the PostgreSQL container is running, you can import an SQL dump file:
+
+```bash
+docker compose exec -T postgres psql -U postgres -d training-nest-101 < ms-sale-db.sql
+```
+
+To verify the import was successful:
+
+```bash
+docker compose exec postgres psql -U postgres -d training-nest-101 -c '\dt'
+```
+
+> **Note:** If you need to re-import, you can drop and recreate the database first:
+>
+> ```bash
+> docker compose exec postgres psql -U postgres -c 'DROP DATABASE IF EXISTS "training-nest-101";'
+> docker compose exec postgres psql -U postgres -c 'CREATE DATABASE "training-nest-101";'
+> docker compose exec -T postgres psql -U postgres -d training-nest-101 < ms-sale-db.sql
+> ```
+
+## 5. Generate & Run Database Migrations (Alternative)
 
 Generate migration files from the Drizzle schema:
 
@@ -53,7 +76,7 @@ Apply migrations to the database:
 npm run db:migrate
 ```
 
-## 5. Start the Application
+## 6. Start the Application
 
 Development mode (with hot-reload):
 
@@ -74,16 +97,16 @@ Visit `GET /` to see the **Hello World!** response.
 
 ## Useful Commands
 
-| Command              | Description                          |
-|----------------------|--------------------------------------|
-| `npm run start:dev`  | Start in watch mode (development)    |
-| `npm run build`      | Compile TypeScript to JavaScript     |
-| `npm run start:prod` | Start compiled app (production)      |
-| `npm run db:generate`| Generate Drizzle migration files     |
-| `npm run db:migrate` | Apply migrations to the database     |
-| `npm run db:studio`  | Open Drizzle Studio (DB GUI)         |
-| `docker compose up -d`   | Start PostgreSQL container       |
-| `docker compose down`    | Stop PostgreSQL container        |
+| Command                | Description                       |
+| ---------------------- | --------------------------------- |
+| `npm run start:dev`    | Start in watch mode (development) |
+| `npm run build`        | Compile TypeScript to JavaScript  |
+| `npm run start:prod`   | Start compiled app (production)   |
+| `npm run db:generate`  | Generate Drizzle migration files  |
+| `npm run db:migrate`   | Apply migrations to the database  |
+| `npm run db:studio`    | Open Drizzle Studio (DB GUI)      |
+| `docker compose up -d` | Start PostgreSQL container        |
+| `docker compose down`  | Stop PostgreSQL container         |
 
 ## Stopping Everything
 

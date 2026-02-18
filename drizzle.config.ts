@@ -7,4 +7,15 @@ export default defineConfig({
   dbCredentials: {
     url: process.env.DATABASE_URL!,
   },
+  tablesFilter: [
+    // base-plan
+    'product_config',
+
+    // base-rider
+    'product_rider',
+  ],
+  schemaFilter: ['public'],
+  introspect: {
+    casing: 'camel',
+  },
 });
