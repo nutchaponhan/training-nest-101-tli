@@ -14,11 +14,10 @@ export default defineConfig({
   verbose: true,
   strict: true,
   tablesFilter: [
-    // base-plan
-    'product_config',
-
-    // base-rider
-    'product_rider',
+    /**
+     * TODO-0 : add table to pull schema
+     */
+    // 'product_config'
   ],
   schemaFilter: ['public'],
   introspect: {

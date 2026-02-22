@@ -16,11 +16,12 @@ export class AppController {
 
   @Get('product-configs')
   async getProductConfigs() {
-    const repos = this.databaseService.repositories();
-
     try {
-      const data = await repos.productConfig.findAll();
-      return data;
+      /**
+       * TODO-4: query product_config by repos.productConfig.findAll();
+       */
+      // const data = await repos.productConfig.findAll();
+      return [];
     } catch (error) {
       return {
         error: error?.message,

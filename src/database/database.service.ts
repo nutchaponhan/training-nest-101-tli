@@ -1,23 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { ProductConfigRepository } from './repositories/product-config.repository';
-import { ProductRiderRepository } from './repositories/product-rider.repository';
+
+/**
+ * Add ProductConfigRepository
+ */
 
 export type RepoRegistry = {
-  productConfig: ProductConfigRepository;
-  productRider: ProductRiderRepository;
+  // productConfig: ProductConfigRepository;
 };
 
 @Injectable()
 export class DatabaseService {
-  constructor(
-    private productConfigRepository: ProductConfigRepository,
-    private productRiderRepository: ProductRiderRepository,
-  ) {}
+  constructor() {}
 
   repositories(): RepoRegistry {
-    return {
-      productConfig: this.productConfigRepository,
-      productRider: this.productRiderRepository,
-    };
+    return {};
   }
 }

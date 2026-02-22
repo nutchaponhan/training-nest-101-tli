@@ -4,8 +4,11 @@ import { Pool } from 'pg';
 import * as schema from '../../drizzle/schema';
 import { DRIZZLE } from './database.constants';
 import { DatabaseService } from './database.service';
-import { ProductConfigRepository } from './repositories/product-config.repository';
-import { ProductRiderRepository } from './repositories/product-rider.repository';
+
+/**
+ * TODO-3: Import ProductConfigRepository and add into providers
+ */
+// import { ProductConfigRepository } from './repositories/product-config.repository';
 
 @Global()
 @Module({
@@ -19,8 +22,6 @@ import { ProductRiderRepository } from './repositories/product-rider.repository'
         return drizzle(pool, { schema });
       },
     },
-    ProductConfigRepository,
-    ProductRiderRepository,
     DatabaseService,
   ],
   exports: [DRIZZLE, DatabaseService],
